@@ -1,0 +1,2 @@
+include ':app', ':phonenumberformatterLibrary'
+rootProject.name='PhoneNumberFormatterLibrary'
