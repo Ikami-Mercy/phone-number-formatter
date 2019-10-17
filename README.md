@@ -8,16 +8,19 @@ An android library to format Kenya 🇰🇪 Phone Number to international format
 ### Download
 You can add the library to your project via gradle
 
-```
+
 Step 1: Add in your root build.gradle of your project
+```
    allprojects {
        repositories {
            ...
            maven { url 'https://jitpack.io' }
        }
    }
+```
 
 Step 2: Add the dependency to your app gradle
+```
    dependencies {
        ...
     implementation 'com.github.Ikami-Mercy:phone-number-formatter:{latest-version}'
