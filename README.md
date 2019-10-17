@@ -1,10 +1,14 @@
 # Phone Number Formatter
 
+[![](https://jitpack.io/v/Ikami-Mercy/phone-number-formatter.svg)](https://jitpack.io/#Ikami-Mercy/phone-number-formatter)
+
+
 An android library to format Kenya 🇰🇪 Phone Number to international format.
 
 ### Download
 You can add the library to your project via gradle
 
+```
 Step 1: Add in your root build.gradle of your project
    allprojects {
        repositories {
@@ -16,9 +20,10 @@ Step 1: Add in your root build.gradle of your project
 Step 2: Add the dependency to your app gradle
    dependencies {
        ...
+    implementation 'com.github.Ikami-Mercy:phone-number-formatter:{latest-version}'
     ...
    }
-
+```
 
 ### Usage
 To use the library call it from your Fragment or activity.
@@ -56,8 +61,11 @@ To use the library call it from your Fragment or activity.
 
 
 ### License
+```
 MIT License
+
 Copyright (c) 2019 Mercy Ikami
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
