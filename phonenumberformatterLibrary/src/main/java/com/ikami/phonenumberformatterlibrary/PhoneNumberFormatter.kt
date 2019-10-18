@@ -11,13 +11,11 @@ object PhoneNumberFormatter {
      * @return is valid
      */
     fun isValidPhoneNumber(phoneNumber: String?): Boolean {
-        if (phoneNumber != null && phoneNumber != "" && phoneNumber.replace(
-                " ".toRegex(),
-                ""
-            ) != ""
-        ) {
+        val number = phoneNumber?.replace(" ".toRegex(), "")
+
+        if (phoneNumber != null && phoneNumber != "" && number != "") {
             val pattern = Pattern.compile("^(?:254|\\+254|0)?(7[0-9]{8})$")
-            return pattern.matcher(phoneNumber).matches()
+            return pattern.matcher(number).matches()
         }
 
         return false
@@ -40,7 +38,7 @@ object PhoneNumberFormatter {
         else
             formattedNumber = phoneNumber
 
-        return formattedNumber
+        return formattedNumber.replace(" ", "")
     }
 
 }
