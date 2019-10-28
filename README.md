@@ -3,7 +3,7 @@
 [![](https://jitpack.io/v/Ikami-Mercy/phone-number-formatter.svg)](https://jitpack.io/#Ikami-Mercy/phone-number-formatter)
 
 
-An android library to format Kenya 🇰🇪 Phone Number to international format.
+An android library to format Kenya 🇰🇪 ,🇺🇬 , 🇹🇿 Phone Number to international format.
 
 ### Download
 You can add the library to your project via gradle
@@ -37,11 +37,14 @@ To use the library call it from your Fragment or activity.
     // Initialize your phone number
     val phoneNumber = "0712345678"
 
+    // Initialize the selected country(Kenya, Tanzania, Uganda)
+    val country = "Kenya"
+
     // Check if your phone number is valid
-    val valid = PhoneNumberFormatter.isValidPhoneNumber(phoneNumber)
+    val valid = PhoneNumberFormatter.isValidPhoneNumber(phoneNumber, country)
 
     // Format your phone number
-   val formattedNumber =PhoneNumberFormatter.formatPhoneNumber(phoneNumber)
+   val formattedNumber =PhoneNumberFormatter.formatPhoneNumber(phoneNumber, country)
 ```
 
 ```java
@@ -50,16 +53,19 @@ To use the library call it from your Fragment or activity.
     // Initialize your phone number
     String phoneNumber = "0712345678"
 
+ // Initialize the selected country(Kenya, Tanzania, Uganda)
+    String country = "Kenya"
+
     // Check if your phone number is valid
-    Boolean valid = PhoneNumberFormatter.isValidPhoneNumber(phoneNumber)
+    Boolean valid = PhoneNumberFormatter.isValidPhoneNumber(phoneNumber, country)
 
     // Format your phone number
-   String formattedNumber =PhoneNumberFormatter.formatPhoneNumber(phoneNumber)
+   String formattedNumber =PhoneNumberFormatter.formatPhoneNumber(phoneNumber, country)
 ```
 
 
 ### Screenshots
-<img src="ScreenShots/3.jpeg" width="200"> <img src="ScreenShots/2.jpeg" width="200"> <img src="ScreenShots/1.jpeg" width="200">
+<img src="ScreenShots/3.jpeg" width="200"> <img src="ScreenShots/4.jpeg" width="200"> <img src="ScreenShots/2.jpeg" width="200"> <img src="ScreenShots/1.jpeg" width="200">
 
 
 
