@@ -49,23 +49,16 @@ object PhoneNumberFormatter {
     }
 
     private fun cleanPhoneNumber(phoneNumber: String): String {
-        val formattedNumber: String
-        if (phoneNumber.startsWith("+254" ))
-            formattedNumber = phoneNumber.replace("+254", "0")
-        else if (phoneNumber.startsWith("254"))
-            formattedNumber = phoneNumber.replace("254", "0")
-        else if (phoneNumber.startsWith("255"))
-            formattedNumber = phoneNumber.replace("255", "0")
-        else if (phoneNumber.startsWith("+255"))
-            formattedNumber = phoneNumber.replace("+255", "0")
-        else if (phoneNumber.startsWith("256"))
-            formattedNumber = phoneNumber.replace("256", "0")
-        else if (phoneNumber.startsWith("+256"))
-            formattedNumber = phoneNumber.replace("+256", "0")
-        else if (phoneNumber.startsWith("7"))
-            formattedNumber = "0$phoneNumber"
-        else
-            formattedNumber = phoneNumber
+        val formattedNumber: String = when {
+            phoneNumber.startsWith("+254" ) -> phoneNumber.replace("+254", "0")
+            phoneNumber.startsWith("254") -> phoneNumber.replace("254", "0")
+            phoneNumber.startsWith("255") -> phoneNumber.replace("255", "0")
+            phoneNumber.startsWith("+255") -> phoneNumber.replace("+255", "0")
+            phoneNumber.startsWith("256") -> phoneNumber.replace("256", "0")
+            phoneNumber.startsWith("+256") -> phoneNumber.replace("+256", "0")
+            phoneNumber.startsWith("7") -> "0$phoneNumber"
+            else -> phoneNumber
+        }
 
         return formattedNumber.replace(" ", "")
     }
