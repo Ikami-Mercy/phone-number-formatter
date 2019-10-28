@@ -10,29 +10,58 @@ object PhoneNumberFormatter {
      * @param phoneNumber - phone number to validate
      * @return is valid
      */
-    fun isValidPhoneNumber(phoneNumber: String?): Boolean {
+    fun isValidPhoneNumber(phoneNumber: String?, country: String?): Boolean {
         val number = phoneNumber?.replace(" ".toRegex(), "")
 
         if (phoneNumber != null && phoneNumber != "" && number != "") {
-            val pattern = Pattern.compile("^(?:254|\\+254|0)?(7[0-9]{8})$")
-            return pattern.matcher(number).matches()
+            if (country.equals("Kenya")) {
+                val pattern = Pattern.compile("^(?:254|\\+254|0)?(7[0-9]{8})$")
+                return pattern.matcher(number).matches()
+            }
+
+            if (country.equals("Uganda")) {
+                val pattern = Pattern.compile("^(?:256|\\+256|0)?(7[0-9]{8})$")
+                return pattern.matcher(number).matches()
+            }
+
+            if (country.equals("Tanzania")) {
+                val pattern = Pattern.compile("^(?:255|\\+255|0)?(7[0-9]{8})$")
+                return pattern.matcher(number).matches()
+            }
         }
 
         return false
     }
 
-    fun formatPhoneNumber(phoneNumber: String): String {
+    fun formatPhoneNumber(phoneNumber: String, country: String?): String {
         val phone = cleanPhoneNumber(phoneNumber)
-        return phone.replaceFirst("0".toRegex(), "254")
+
+
+        if (country.equals("Uganda")) {
+            return phone.replaceFirst("0".toRegex(), "256")
+        }
+
+        if (country.equals("Tanzania")) {
+            return phone.replaceFirst("0".toRegex(), "255")
+        }
+        else
+            return phone.replaceFirst("0".toRegex(), "254")
     }
 
     private fun cleanPhoneNumber(phoneNumber: String): String {
         val formattedNumber: String
-
-        if (phoneNumber.startsWith("+254"))
+        if (phoneNumber.startsWith("+254" ))
             formattedNumber = phoneNumber.replace("+254", "0")
         else if (phoneNumber.startsWith("254"))
             formattedNumber = phoneNumber.replace("254", "0")
+        else if (phoneNumber.startsWith("255"))
+            formattedNumber = phoneNumber.replace("255", "0")
+        else if (phoneNumber.startsWith("+255"))
+            formattedNumber = phoneNumber.replace("+255", "0")
+        else if (phoneNumber.startsWith("256"))
+            formattedNumber = phoneNumber.replace("256", "0")
+        else if (phoneNumber.startsWith("+256"))
+            formattedNumber = phoneNumber.replace("+256", "0")
         else if (phoneNumber.startsWith("7"))
             formattedNumber = "0$phoneNumber"
         else

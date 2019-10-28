@@ -3,6 +3,7 @@ package com.phonenumberformatterlibrary
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.view.get
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.ikami.phonenumberformatterlibrary.PhoneNumberFormatter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,10 +17,11 @@ class MainActivity : AppCompatActivity() {
 
         btn_Format.setOnClickListener {
             var PhoneNo = et_phone_No.text
+            var country = country.getSelectedItem().toString()
 
             if (!PhoneNo.isNullOrEmpty()) {
-                if (PhoneNumberFormatter.isValidPhoneNumber(PhoneNo.toString()))
-                    et_Result.setText(PhoneNumberFormatter.formatPhoneNumber(PhoneNo.toString()))
+                if (PhoneNumberFormatter.isValidPhoneNumber(PhoneNo.toString(),country))
+                    et_Result.setText(PhoneNumberFormatter.formatPhoneNumber(PhoneNo.toString(), country))
                 else{
                     SweetAlertDialog(this@MainActivity, SweetAlertDialog.ERROR_TYPE)
                         .setTitleText("Oops...")

@@ -4,58 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="#21293F"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="20dp"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/logo" />
+
+
+    <Spinner
+        android:id="@+id/country"
+        style="@style/spinnerItemStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/nationality_arrays"
+        android:fontFamily="@font/avenir"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:textColor="#FFF"
+        android:background="@color/colorAccent"
+        android:textColorHint="@color/colorAccent" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:hint="Enter Phone Number"
-        android:fontFamily="@font/avenir"
-        android:textColor="#FFF"
-        android:textColorHint="@color/colorAccent"
         android:id="@+id/et_phone_No"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        />
+        android:fontFamily="@font/avenir"
+        android:gravity="center"
+        android:hint="Enter Phone Number"
+        android:textColor="#FFF"
+        android:textColorHint="@color/colorAccent" />
+
     <Button
+        android:id="@+id/btn_Format"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#3082B8"
+        android:fontFamily="@font/avenir"
         android:gravity="center"
         android:padding="15dp"
-        android:id="@+id/btn_Format"
-        android:layout_height="wrap_content"
         android:text="Format Phone Number"
-        android:textColor="#FFF"
-        android:fontFamily="@font/avenir"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="#3082B8"
-        android:layout_marginBottom="20dp"
-        />
+        android:textColor="#FFF" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:gravity="center"
         android:id="@+id/et_Result"
-        android:fontFamily="@font/avenir"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Result"
-        android:textColorHint="@color/colorAccent"
-        android:textColor="#FFF"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        />
+        android:fontFamily="@font/avenir"
+        android:gravity="center"
+        android:hint="Result"
+        android:textColor="#FFF"
+        android:textColorHint="@color/colorAccent" />
 </LinearLayout>
