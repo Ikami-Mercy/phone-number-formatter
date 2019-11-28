@@ -1,6 +1,6 @@
 # Phone Number Formatter
 
-[![](https://jitpack.io/v/Ikami-Mercy/phone-number-formatter.svg)](https://jitpack.io/#Ikami-Mercy/phone-number-formatter)
+[![](https://jitpack.io/v/Ikami-Mercy/phone-number-formatter.svg)](https://jitpack.io/#Ikami-Mercy/phone-number-formatter)  [![CodeFactor](https://www.codefactor.io/repository/github/ikami-mercy/phone-number-formatter/badge)](https://www.codefactor.io/repository/github/ikami-mercy/phone-number-formatter)
 
 
 An android library to format Kenya 🇰🇪 ,🇺🇬 , 🇹🇿 Phone Number to international format.
