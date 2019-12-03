@@ -8,6 +8,10 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 import com.ikami.phonenumberformatterlibrary.PhoneNumberFormatter
 import kotlinx.android.synthetic.main.activity_main.*
 
+
+/**
+*Main Activity to test phone formating library
+*/
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
