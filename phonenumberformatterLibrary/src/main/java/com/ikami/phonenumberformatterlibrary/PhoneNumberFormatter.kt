@@ -2,6 +2,10 @@ package com.ikami.phonenumberformatterlibrary
 
 import java.util.regex.Pattern
 
+    /**
+     * Function to validate phone number
+     */
+
 object PhoneNumberFormatter {
 
 
